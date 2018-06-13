@@ -1,0 +1,37 @@
+<div class="sort_container">
+	<button class="sort_container__button" (click)="onSort('firstName')">Sort By FirstName</button>
+	<button class="sort_container__button" (click)="onSort('age')">Sort By Age</button>
+</div>
+<div class="card">
+	<ul class="list-group" infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="300"
+    (scrolled)="onScroll()"
+    >
+		<!--<app-contact
+		*ngFor="let contact of contacts; let i = index"
+		[contact]="contact"
+		[index]="i"
+		></app-contact>-->
+		<a 
+		*ngFor="let contact of contacts$ | async | orderBy: {property: column, direction: direction}; let i = index"
+		routerLink="/detail/{{contact.id}}"
+		routerLinkActive = "active"
+		class="contact"
+		>
+		<div class="card">
+			<div class="card-body">
+				<div class="img">
+					<img class="img-responsive" [src]="contact.img" alt={{contact.firstName}}>
+				</div>
+				<div class="img-descr">
+					<h5 class="card-title">{{contact.firstName}}</h5>
+					<h5 class="card-title">{{contact.lastName}}</h5>
+					<h6 class="card-subtitle">{{contact.age}}</h6>
+					<p class="card-text">{{contact.descr}}</p>
+				</div>
+			</div>
+		</div>
+	</a>
+</ul>
+</div>

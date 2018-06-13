@@ -1,0 +1,23 @@
+.sort_container {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+	&__button {
+		max-width: 200px;
+		padding: 6px;
+		margin-left: 8px;
+		border-radius: 6px;
+		outline: none;
+	}
+}
+
+.contact {
+	width: 200px;
+	margin: 10px auto;
+	text-align: center;
+	color: #000;
+	&:hover .card {
+		border-color: blue;
+	}
+}
+

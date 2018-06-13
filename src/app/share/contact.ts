@@ -1,0 +1,12 @@
+export class Contact {
+	constructor(
+		public id: number,
+		public firstName: string,
+		public lastName: string,
+		public age: number,
+		public link: string,
+		public descr: string,
+		public img: string
+		) { }
+	
+}
